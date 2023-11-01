@@ -1,4 +1,3 @@
-import pyjokes
 from pyscript import document, window
 from pyodide.http import pyfetch
 from pyodide.code import run_js
