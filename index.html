@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Evvvv PyScript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <script type="module" src="https://pyscript.net/snapshots/2023.09.1.RC2/core.js"></script>
+        <style>
+            h4 {
+                font-weight: normal;
+            }
+            .signature {
+                border: 2px solid grey;
+                border-radius: 5px;
+                inline-size: 450px;
+                word-break: break-all;
+                margin: 2px;
+                padding: 5px;
+            }
+            .block_container
+            {
+                text-align: start;
+            }
+            .block
+            {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <script type="py" src="./main.py" config="./pyscript.json"></script>
+        <header>
+            <img src="MetaMask_Fox_logo.png" className="App-logo" alt="logo" style="width: 50px; height: 50px;"/>
+            <h1 className="App-title">
+                Welcome to Login with MetaMask Demo
+            </h1>
+        </header>
+        <div>
+            <div>
+                <p>
+                    MetaMask login Demo on pyscript
+                </p>
+                <button id="connect_wallet" className="Login-button Login-mm" py-click="connect_wallet_on_click">
+                    Login with MetaMask
+                </button>
+                <button id="sign_message" className="Login-button Login-mm" py-click="sign_message_on_click">
+                    Sign message with MetaMask
+                </button>
+
+                <div id="message">
+                    Message to sign: <b>This is a message to sign for PyScript - Metamask integration</b>
+                </div>
+                <div style="padding-top: 10px;">
+                    <div>Signature: </div><div id="signature" class="signature">...</div>
+                </div>
+                <br/>
+                <div id="public_address">
+                    My public address is ...
+                </div>
+                <br/>
+                <br/>
+                <div class="block_container">
+                    <div class="block">
+                        <label for="api-key">Etherscan API Key:</label>
+                         <input type="text" id="api-key" name="api-key" style="width: fit-content;">
+                    </div>
+                    <div class="block">
+                        <button id="get_wallet_balance_api" className="Login-button Login-mm" py-click="get_wallet_balance_api_on_click">
+                            Get balance from Etherscan
+                        </button>
+                    </div>
+                </div>
+                <div id="wallet_balance_api">
+                    Wallet balance from etherscan API: ...
+                </div>
+                <br/>
+                <br/>
+                <button id="get_wallet_balance_js" className="Login-button Login-mm" py-click="get_wallet_balance_js_on_click">
+                    Get balance from Metamask RPC
+                </button>
+                <div id="wallet_balance_js">
+                    Wallet balance from Metamask RPC: ...
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
